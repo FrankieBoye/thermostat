@@ -10,8 +10,14 @@ describe('Thermostat', function() {
     expect(thermostat.getCurrentTemperature()).toEqual(20);
   });
 
-  // it('can be increased with an up function', function() {
-  //   expect(thermostat.increase_temperature).
-  // });
+  it('can be increased with up()', function() {
+    thermostat.up();
+    expect(thermostat.getCurrentTemperature()).toEqual(21);
+  });
+
+  it('can be decresed with down()', function() {
+    thermostat.down();
+    expect(thermostat.getCurrentTemperature()).toEqual(19);
+  });
 
 });
