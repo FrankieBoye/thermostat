@@ -60,4 +60,28 @@ describe('Thermostat', function() {
     expect(function() {thermostat.up()}).toThrow("Error, cannot go above 32 degrees")
   });
 
+  it('can reset the temperature to 20 degrees with a reset function', function() {
+    thermostat.up();
+    thermostat.reset();
+    expect(thermostat.getCurrentTemperature()).toEqual(20);
+  });
+
+  it('can display current usage', function() {
+    for (var i = 20; i < 25; i++) {
+      thermostat.up();
+    }
+    expect(thermostat.usage()).toEqual("medium-usage")
+    thermostat.switchPowerSavingModeOff();
+    for (var i = 25; i < 32; i++) {
+      thermostat.up();
+      // console.log(thermostat.getCurrentTemperature());
+    }
+    expect(thermostat.usage()).toEqual("high-usage")
+    for (var i = 32; i > 17; i--) {
+      thermostat.down();
+    }
+    // console.log(thermostat.getCurrentTemperature());
+    expect(thermostat.usage()).toEqual("low-usage")
+  });
+
 });

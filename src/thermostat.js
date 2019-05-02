@@ -50,3 +50,19 @@ Thermostat.prototype.switchPowerSavingModeOn = function() {
 Thermostat.prototype.switchPowerSavingModeOff = function() {
   this.PowerSavingMode = false;
 };
+
+Thermostat.prototype.reset = function() {
+  this.temperature = 20;
+};
+
+Thermostat.prototype.usage = function() {
+  if (this.temperature > 25) {
+    return 'high-usage'
+  }
+  else
+  if (this.temperature < 18) {
+    return 'low-usage'
+  }
+  else
+    return 'medium-usage'
+  };
