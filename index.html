@@ -6,6 +6,7 @@
   </head>
   <body>
     <section>
+      <h1>Thermostat</h1>
       <h1 id="temperature"></h1>
       <p>
         <button id="temperature-up">+</button>
@@ -16,9 +17,10 @@
         <button id="powersaving-off">PSM off</button>
       </p>
     </section>
-    <script src="./src/thermostat.js"></script>
   </body>
 </html>
+
+
 
 
 <script src="src/thermostat.js"></script>
@@ -33,6 +35,29 @@
       $('#temperature').text(thermostat.temperature);
     });
 
+    $('#temperature-down').on('click', function() {
+      thermostat.down();
+      $('#temperature').text(thermostat.temperature);
+    });
+
+    $('#temperature-reset').on('click', function() {
+      thermostat.reset();
+      $('#temperature').text(thermostat.temperature);
+    });
+
+    $('#powersaving-on').on('click', function() {
+      thermostat.switchPowerSavingModeOn();
+      $('#temperature').text(thermostat.temperature);
+    });
+
+    $('#powersaving-off').on('click', function() {
+      thermostat.switchPowerSavingModeOff();
+      $('#temperature').text(thermostat.temperature);
+    });
+
+    // $('#power-saving-status').on('click', function() {
+    //   thermostat.PowerSavingMode();
+    //   $('#PMS').text(thermostat.PMS);
 
   });
 
