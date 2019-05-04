@@ -1,4 +1,5 @@
-###Thermostat: business logic
+Thermostat: business logic
+==========================
 
 In this challenge, you will build the logic needed to model a simple thermostat.
 
