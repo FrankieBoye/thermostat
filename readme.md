@@ -1,9 +1,10 @@
 Thermostat: business logic
 ==========================
 
-In this challenge, you will build the logic needed to model a simple thermostat.
+In this challenge you will build the logic needed to model a simple thermostat.
 
 Challenge Specification:
+==========================
 
 Thermostat starts at 20 degrees
 
